@@ -214,8 +214,8 @@ function Bio() {
                   ♪
                 </div>
                 <div className="min-w-0">
-                  <div className="text-sm font-medium truncate">original sound</div>
-                  <div className="text-xs text-white/50 truncate">tr1x.fx</div>
+                  <div className="text-sm font-medium truncate">@wbu5s on tt</div>
+                  <div className="text-xs text-white/50 truncate">@wbu5s on tt</div>
                 </div>
               </div>
               <button
