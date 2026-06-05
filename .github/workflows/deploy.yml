@@ -1,4 +1,4 @@
-name: Deploy Vite site
+name: Deploy Static Vite App
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,15 +21,21 @@ jobs:
           node-version: 20
 
       - run: npm install --force
+
+      # FORCE static build (important for TanStack/Nitro setups)
       - run: npx vite build
+
+      # sanity check
+      - run: ls dist
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
 
